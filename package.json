@@ -1,0 +1,23 @@
+{
+  "name": "zenn-hub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atu4403/zenn-hub.git"
+  },
+  "keywords": [],
+  "author": "whats",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atu4403/zenn-hub/issues"
+  },
+  "homepage": "https://github.com/atu4403/zenn-hub#readme",
+  "dependencies": {
+    "zenn-cli": "^0.1.85"
+  }
+}
