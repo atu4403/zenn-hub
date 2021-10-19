@@ -3,7 +3,7 @@ title: "BeautifulSoupのparser比較"
 emoji: "🧼"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['python','BeautifulSoup']
-published: false
+published: true
 ---
 
 BeautifulSoupのparser、`xml`と`lxml`の違いについて調べてみました。
@@ -69,16 +69,11 @@ xmlタグがある文字列を渡しても、lxmlの場合はやはりhtmlタグ
 
 xmlは`<abc:def>`のようにコロン付きのタグがあります。`abc`は名前空間です。
 
+### タグ名の変換
 
-### namespace(名前空間)
-
-- lxml: namespaceの処理はありません
+- lxml: タグ名を全て小文字に変換します
 - xml : namespaceを削除します
 
-### 大文字小文字の区別
-
-- lxml: 大文字小文字を区別しません
-- xml : 大文字小文字を区別します
 
 ```xml
 <aaa>
@@ -96,39 +91,48 @@ def test_parser_2():
     soup = BeautifulSoup(s, 'lxml')
     soup2 = BeautifulSoup(s, 'lxml-xml')
     assert soup.find_all('abc:def')[0].get_text() == 'ghi'
+    assert str(soup.find_all('abc:def')) == '[<abc:def>ghi</abc:def>, <abc:def>jkl</abc:def>]'
     assert len(soup.find_all('abc:def')) == 2
     assert soup2.find_all('abc:def') == []
     assert soup2.find_all('Abc:Def') == []
     assert soup2.find_all('def') == []
-    assert soup2.find_all('Def')
+    assert str(soup2.find_all('Def')) == '[<Def>ghi</Def>, <Def>123</Def>, <Def>jkl</Def>]'
     assert soup2.find_all('Def')[0].get_text() == 'ghi'
     assert len(soup2.find_all('Def')) == 3
+
 ```
 
 ### lxml
 
 `soup.find_all('abc:def')`で2つの要素が抽出できます。
 
-```python
+```xml
 [
-    <Abc:Def>ghi</Abc:Def>
-    <Abc:Def>jkl</Abc:Def>
+    <abc:def>ghi</abc:def>,
+    <abc:def>jkl</abc:def>,
 ]
 ```
-大文字小文字を区別しないので、`abc:def`でfind_allできます。
+タグ名は小文字に変換されているので`Abc:Def`ではヒットしません。
 
 ### xml
 
 `soup2.find_all('Def')`で全ての要素が抽出できます。
-名前空間が削除されていて、大文字小文字を区別しているのがわかります。
-('abc:def','Abc:Def','def'の要素は存在しないとみなされます)
+名前空間が削除されていて、大文字小文字はそのままです。
+`abc:def`,`Abc:Def`,`def`ではヒットしません。
 
+```xml
+[
+    <Def>ghi</Def>,
+    <Def>123</Def>,
+    <Def>jkl</Def>
+]
+```
 ## まとめ
 
-|              | lxml         | xml                |
-|:-------------|:-------------|:-------------------|
-| 内部処理     | htmlタグで囲まれる | 先頭にxmlタグが付与される |
-| 自動修正     | ○            | ○                  |
-| エイリアス        | なし           | lxml-xml           |
-| 名前空間     | 処理なし       | 削除               |
-| 大文字小文字 | 区別しない      | 区別する             |
+|               | lxml         | xml                |
+|:--------------|:-------------|:-------------------|
+| 内部処理      | htmlタグで囲まれる | 先頭にxmlタグが付与される |
+| 構造の自動修正 | ○            | ○                  |
+| エイリアス         | なし           | lxml-xml           |
+| タグ名の変換     | 全て小文字に   | 名前空間を削除      |
+
