@@ -3,7 +3,7 @@ title: "BeautifulSoupのparser比較"
 emoji: "🧼"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ['python','BeautifulSoup']
-published: true
+published: false
 ---
 
 BeautifulSoupのparser、`xml`と`lxml`の違いについて調べてみました。
