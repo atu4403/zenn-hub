@@ -132,3 +132,54 @@ pushしたリポジトリのgithubのページから、settings → pagesを開�
 URLがちょっと気持ち悪いですが、今回作成したドキュメントがこちらです。
 
 https://atu4403.github.io/adash/adash/
+
+
+## 自動化
+(2021/11/06追記)
+
+上記の手順ではドキュメント更新時にその都度`pdoc`コマンドで作成し、commit & pushする手間があります。これをgithub actionsで自動化します。
+
+https://github.com/peaceiris/actions-gh-pages
+
+このActionを使うと、指定したディレクトリを`gh-pages`ブランチにデプロイします。
+
+`.github/workflows/deploy.yml`を作成します。
+
+```yml
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Build
+        run: |
+          pip install pdoc3
+          pdoc --html --output-dir tmp --force src/{ここにproject-name}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./tmp
+```
+
+`ここにproject-name`の部分をプロジェクト名に合わせて書き換えます。
+
+以上でpush時に自動で、`gh-pages`ブランチにドキュメントが作成されます。
+
+settings → pages の設定をgh-pagesとrootに変更すると完了です。
+
