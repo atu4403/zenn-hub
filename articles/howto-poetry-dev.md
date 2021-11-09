@@ -1,9 +1,9 @@
 ---
 title: "poetryで開発からpypiにpublishするまで"
-emoji: "💭"
+emoji: "🌅"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["python", "poetry", "pypi"]
-published: false
+published: true
 ---
 
 poetryを使ったパッケージ開発から公開までの備忘録です。
