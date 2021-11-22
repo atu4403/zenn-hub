@@ -46,7 +46,6 @@ nodebrew
 
 `~/.nodebrew`以下を削除
 
-
 ## install
 
 Unixならワンライナー
@@ -73,6 +72,7 @@ https://docs.volta.sh/guide/getting-started
 ❯ volta -v
 1.0.5
 ```
+
 ## setup
 
 homebrewで入れた場合はパスが通ってないので、通してくれるコマンドがある。
@@ -109,6 +109,7 @@ volta install yarn
 
 > ちなみに`~ via...`の行はプロンプトです。staship使ってます。
 > https://starship.rs/
+
 ### プロジェクトでバージョンを固定する
 
 `package.json`のあるディレクトリでnodeのバージョンを固定したい時はpinを打つ。
@@ -182,7 +183,8 @@ voltaではv16でグローバルインストールしたコマンドを、v15に
 ## volta使い方まとめ
 
 オプション一覧
-```
+
+```log
 SUBCOMMANDS:
     fetch          Fetches a tool to the local machine
     install        Installs a tool in your toolchain
@@ -197,7 +199,9 @@ SUBCOMMANDS:
 ```
 
 以下、使いそうな機能
+
 ### fetch
+
 ダウンロードのみを行う
 
 ```bash
@@ -205,6 +209,7 @@ volta fetch node@12
 ```
 
 ### install
+
 インストール、バージョンの切り替え
 
 ```bash
@@ -212,6 +217,7 @@ volta install node@16
 ```
 
 ### pin
+
 プロジェクトのnodeバージョン固定
 
 ```bash
@@ -219,6 +225,7 @@ volta pin node@16
 ```
 
 ### which
+
 本体の場所確認
 
 ```bash
@@ -229,5 +236,18 @@ volta pin node@16
 > volta which node
 /Users/foo/.volta/tools/image/node/16.13.0/bin/node
 ```
+
+### completions
+
+- shellごとに違う補完ファイルを作成
+- `-o`オプションで出力先を指定する
+- `-o`オプションが無い場合は標準出力に表示
+
+```bash
+volta completions zsh
+volta completions fish
+volta completions fish -o ~/.config/fish/completions/volta.fish
+```
+
 
 その他、必要になったら追加していきます。
