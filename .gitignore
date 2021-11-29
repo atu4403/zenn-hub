@@ -1,3 +1,5 @@
 node_modules
 .DS_Store
-draft
+draft/*
+memo.md
+memo.fish

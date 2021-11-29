@@ -19,5 +19,8 @@
   "homepage": "https://github.com/atu4403/zenn-hub#readme",
   "dependencies": {
     "zenn-cli": "^0.1.85"
+  },
+  "volta": {
+    "node": "16.13.0"
   }
 }
