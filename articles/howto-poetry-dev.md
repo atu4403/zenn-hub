@@ -80,7 +80,7 @@ poetry run ptw --ignore tests/test_download.py
 pytest-cov
 
 ```bash
-poetry run pytest --cov-report term-missing --cov=src/adash tests/すぷら
+poetry run pytest --cov-report term-missing --cov=src/adash tests/
 ```
 
 ## 完成〜publishまで
