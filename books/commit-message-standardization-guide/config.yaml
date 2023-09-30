@@ -1,5 +1,5 @@
 title: "コミットメッセージの標準化で開発をスムーズに：Conventional CommitsとSemantic Versioningの全面ガイド"
 summary: "コミットメッセージに頭を悩ませていませんか？不明瞭なメッセージがプロジェクトの進行を妨げていると感じたことはありませんか？この全面ガイドでは、Conventional CommitsとSemantic Versioningを用いて、コミットメッセージを標準化し、開発プロセスを効率化する方法を詳しく解説します。一貫性のあるメッセージ作成で、チーム内のコミュニケーションをスムーズにし、CHANGELOGの自動生成まで可能にします。これで、コミットメッセージに悩む日々は終わりです。"
 topics: ['個人開発']
-published: false
+published: true
 price: 0 # 有料の場合200〜5000
