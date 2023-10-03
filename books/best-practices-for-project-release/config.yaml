@@ -1,0 +1,5 @@
+title: "ChatGPTとMakefileでリリース作業を自動化しよう"
+summary: "プロジェクトのリリース作業は、多くの開発者にとって面倒な作業の一つです。ドキュメントの作成、CHANGELOGの更新、CIでのテスト実行など、手作業で行うには時間と労力がかかります。この本は、そんな煩雑な作業を効率的に自動化する方法を提供します。"
+topics: ['chatgpt', 'makefile']
+published: true
+price: 0 # 有料の場合200〜5000
