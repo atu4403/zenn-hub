@@ -2,8 +2,8 @@
 title: "ClaudeCodeの日本語入力問題、完全に理解した"
 emoji: "💡"
 type: "tech" # tech: 技術記事 / idea: アイデア記事
-topics: ["ClaudeCode", "日本語入力", "AI", "Git", "Bash", "初心者", "備忘録", "プログラミング"]
-published: false # true: 本番 / false: 下書き
+topics: ["ClaudeCode", "日本語入力", "AI", "初心者"]
+published: true
 ---
 
 ## Aくんの新しい相棒
