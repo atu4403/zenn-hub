@@ -1,0 +1,168 @@
+# keyword-dictionary.yml
+
+# 技術用語辞書
+# 日本語キーワード → 英語slug用語への変換表
+
+# 一般的な記事タイプ
+general:
+  入門: basics
+  基礎: fundamentals
+  初心者: beginner
+  上級者: advanced
+  チュートリアル: tutorial
+  使い方: how-to
+  やり方: how-to
+  方法: method
+  手順: steps
+  設定: setup
+  構築: setup
+  環境構築: environment-setup
+  インストール: install
+  導入: introduction
+  解説: explanation
+  説明: guide
+  まとめ: summary
+  比較: comparison
+  違い: difference
+  選び方: choosing
+  おすすめ: recommended
+  実践: practice
+  応用: application
+  コツ: tips
+  技: tips
+  裏技: tricks
+  トラブルシューティング: troubleshooting
+  問題解決: troubleshooting
+  エラー: error
+  対処法: solution
+
+# プログラミング言語
+languages:
+  Python: python
+  JavaScript: javascript
+  TypeScript: typescript
+  Java: java
+  C++: cpp
+  Go: go
+  Rust: rust
+  PHP: php
+  Ruby: ruby
+  Swift: swift
+  Kotlin: kotlin
+
+# フレームワーク・ライブラリ
+frameworks:
+  React: react
+  Vue: vue
+  Angular: angular
+  Next.js: nextjs
+  Nuxt: nuxt
+  Express: express
+  Django: django
+  Flask: flask
+  FastAPI: fastapi
+  Spring: spring
+  Laravel: laravel
+  Rails: rails
+
+# ツール・技術
+tools:
+  Docker: docker
+  Kubernetes: kubernetes
+  Git: git
+  GitHub: github
+  VSCode: vscode
+  Vim: vim
+  Emacs: emacs
+  Webpack: webpack
+  Vite: vite
+  Babel: babel
+  ESLint: eslint
+  Prettier: prettier
+  Jest: jest
+  Cypress: cypress
+  Selenium: selenium
+
+# クラウド・インフラ
+cloud:
+  AWS: aws
+  Azure: azure
+  GCP: gcp
+  Heroku: heroku
+  Vercel: vercel
+  Netlify: netlify
+  Firebase: firebase
+
+# データベース
+database:
+  MySQL: mysql
+  PostgreSQL: postgresql
+  MongoDB: mongodb
+  Redis: redis
+  SQLite: sqlite
+  DynamoDB: dynamodb
+
+# ゲーム関連
+games:
+  Factorio: factorio
+  回路ネットワーク: circuit-network
+  ベルトコンベア: belt-conveyor
+  組み立て機: assembling-machine
+  挿入機: inserter
+  ロボット: robot
+  ドローン: drone
+  自動化: automation
+  効率化: optimization
+  レシピ: recipe
+  MOD: mod
+  モッド: mod
+
+# 年度・時期
+time:
+  "2024": "2024"
+  "2023": "2023"
+  "2022": "2022"
+  "2021": "2021"
+  最新: latest
+  新しい: new
+  古い: old
+  現在: current
+
+# その他技術用語
+tech:
+  API: api
+  REST: rest
+  GraphQL: graphql
+  JSON: json
+  XML: xml
+  YAML: yaml
+  CSV: csv
+  HTML: html
+  CSS: css
+  SCSS: scss
+  Sass: sass
+  Tailwind: tailwind
+  Bootstrap: bootstrap
+  Material-UI: material-ui
+  スクレイピング: scraping
+  クローリング: crawling
+  機械学習: machine-learning
+  AI: ai
+  深層学習: deep-learning
+  ニューラルネットワーク: neural-network
+  データ分析: data-analysis
+  可視化: visualization
+  グラフ: graph
+  チャート: chart
+  パフォーマンス: performance
+  最適化: optimization
+  セキュリティ: security
+  認証: authentication
+  認可: authorization
+  暗号化: encryption
+  テスト: testing
+  単体テスト: unit-test
+  統合テスト: integration-test
+  CI/CD: cicd
+  デプロイ: deploy
+  リリース: release
